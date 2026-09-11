@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Belhasa Driving Center — Your trusted driving school in the UAE." />
+    <title>Belhasa Driving Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="whatsapp.css" />
+    <link rel="stylesheet" href="faq.css" />
+    <link rel="icon" type="image/png" href="assets/images/sb_logo.png" />
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+
+            <!-- Logo -->
+            <a href="#" class="header-logo" id="header-logo-link" aria-label="Belhasa Driving Center - Home">
+                <img src="assets/images/logo_bdc.png" alt="Belhasa Driving Center Logo" id="site-logo" class="logo-img"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="logo-placeholder" id="logo-placeholder">
+                    <div class="logo-icon">SB</div>
+                    <div class="logo-text">
+                        <span class="logo-arabic">مركز بلحسا للسياقة</span>
+                        <span class="logo-english">BELHASA DRIVING CENTER</span>
+                    </div>
+                </div>
+            </a>
+            <!-- Hamburger Menu Button (Mobile) -->
+            <button class="header-menu-toggle" id="header-menu-toggle" aria-label="Open navigation">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+            <!-- Navigation / CTA -->
+            <nav class="header-nav" id="header-nav" aria-label="Primary navigation">
+                <a href="tel:8002354272" class="btn-ramadan btn-header-call">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Now</span>
+                </a>
+                <a href="https://wa.me/+971551030103" class="btn-ramadan btn-header-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp Now</span>
+                </a>
+            </nav>
+
+        </div>
+    </header>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('header-menu-toggle');
+        const headerNav = document.getElementById('header-nav');
+        menuToggle.addEventListener('click', function () {
+            headerNav.classList.toggle('nav-open');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-section" id="ramadan-offer" aria-label="Ramadan Offer Hero">
+        <div class="hero-inner">
+
+            <!-- ── LEFT: Copy ── -->
+            <div class="hero-content" id="hero-content">
+
+                <!-- Badge -->
+                <div class="hero-badge" id="hero-badge">
+                    <span class="hero-badge-icon">🌙</span>
+                    <span>RAMADAN DRIVING LICENSE OFFER</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="hero-heading" id="hero-heading">
+                    <span class="hero-heading-dark"><span class="hero-highlight">40%</span> Discount On Practical
+                        Training</span><br />
+                    <span class="hero-heading-gold">
+                        <span class="hero-offer-line"><i class="fa-solid fa-circle-check"></i> Unlimited Package</span>
+                        <span class="hero-offer-line"><i class="fa-solid fa-circle-check"></i> Free Theory
+                            Practice</span>
+                    </span>
+                </h1>
+
+                <!-- Sub-copy -->
+                <p class="hero-desc" id="hero-desc">
+                    We stay with you until you hold your UAE driving license guaranteed.
+                </p>
+
+                <!-- Feature Pills -->
+                <div class="hero-features" id="hero-features">
+                    <div class="hero-feat-pill hero-feat-pill--neutral">
+                        <!-- Credit Card Icon -->
+                        <img src="assets/images/tabby.svg" alt="Tabby Logo" style="height: 38px; width: auto;" />
+                        <span class="feat-label-bold">0% Intrest via Tabby</span>
+                    </div>
+
+                    <div class="hero-feat-pill hero-feat-pill--neutral">
+                        <!-- Bus Icon -->
+                        <i class="fa-solid fa-bus hero-feat-svg"
+                            style="font-size: 22px; width: unset; height: unset;"></i>
+                        <span class="feat-label-bold">Free Transportation</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ── RIGHT: Form Card ── -->
+            <div class="hero-form-wrap" id="hero-form-wrap">
+                <div class="hero-form-card" id="hero-form-card">
+
+                    <h2 class="form-title" id="form-title">Claim Your Ramadan Driving License Offer</h2>
+
+                    <form class="booking-form" id="booking-form" action="send_email.php" method="POST" novalidate>
+                        <div class="form-success-message" id="form-success-message"
+                            style="display:none;color:green;margin-bottom:10px;font-weight:500;text-align:center;">Thank
+                            you! Your details have been submitted successfully. Our team will contact you shortly.</div>
+
+                        <div class="form-group">
+                            <label for="field-name" class="form-label">FULL NAME</label>
+                            <input type="text" id="field-name" name="full_name" class="form-input"
+                                placeholder="Full Name" autocomplete="name" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="field-email" class="form-label">EMAIL</label>
+                            <input type="email" id="field-email" name="email" class="form-input" placeholder="Email"
+                                autocomplete="email" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="field-phone" class="form-label">PHONE NUMBER</label>
+                            <input type="tel" id="field-phone" name="phone" class="form-input"
+                                placeholder="+971 50 000 0000" autocomplete="tel" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="field-language" class="form-label">PREFERRED LANGUAGE</label>
+                            <div class="form-select-wrap">
+                                <select id="field-language" name="language" class="form-select" required>
+                                    <option value="">Select Language</option>
+                                    <option value="arabic" selected>Arabic</option>
+                                    <option value="english">English</option>
+                                    <option value="hindi_urdu">Hindi/Urdu</option>
+                                    <option value="tagalog">Tagalog</option>
+                                </select>
+                                <span class="select-arrow" aria-hidden="true">▼</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="field-interest" class="form-label">I'M INTERESTED IN</label>
+                            <div class="form-select-wrap">
+                                <select id="field-interest" name="interest" class="form-select" required>
+                                    <option value="">Select Course</option>
+                                    <option value="lmv" selected>Light Motor Vehicle (LMV)</option>
+                                    <option value="mc">Motorcycle</option>
+                                    <option value="hlb">Heavy & Light Bus</option>
+                                    <option value="ht">Heavy Truck</option>
+                                    <option value="hf">Heavy Forklift</option>
+                                    <option value="lf">Light Forklift</option>
+                                </select>
+                                <span class="select-arrow" aria-hidden="true">▼</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-book-form" id="btn-book-form">
+                            <span>🌙</span>
+                            <span>Register Now</span>
+                        </button>
+
+                        <p class="form-privacy">*We'll never share your email with anyone else.</p>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ===== COURSES SECTION ===== -->
+    <section class="courses-section" aria-label="Our Driving Courses">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="courses-header">
+                <div class="header-separator">
+                    <span class="sep-line"></span>
+                    <span class="sep-text">BELHASA DRIVING CENTER</span>
+                    <span class="sep-line"></span>
+                </div>
+                <h2 class="courses-title">
+                    <span class="title-dark">Exclusive Savings on</span>
+                    <span class="title-gold">All Courses</span>
+                </h2>
+                <p class="courses-subtitle">Limited-time Ramadan discounts. Book now before slots fill up.</p>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="courses-grid">
+
+                <!-- Card 1: LMV -->
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="assets/images/Light motor vechicle.webp" alt="Light Motor Vehicle" class="course-img"
+                            loading="lazy">
+                    </div>
+                    <h3 class="course-name">Light Motor Vehicle</h3>
+                </div>
+
+                <!-- Card 2: Motorcycle -->
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="assets/images/Motorcycle.jpg" alt="Motorcycle" class="course-img" loading="lazy">
+                    </div>
+                    <h3 class="course-name">Motorcycle</h3>
+                </div>
+
+                <!-- Card 3: Heavy Bus -->
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="assets/images/Heavy truck bus.jpg" alt="Heavy Bus" class="course-img" loading="lazy">
+                    </div>
+                    <h3 class="course-name">Heavy Bus</h3>
+                </div>
+
+                <!-- Card 4: Heavy Truck -->
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="assets/images/heavy truck.jpg" alt="Heavy Truck" class="course-img" loading="lazy">
+                    </div>
+                    <h3 class="course-name">Heavy Truck</h3>
+                </div>
+
+                <!-- Card 5: Forklift -->
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="assets/images/forklift.jpg" alt="Forklift" class="course-img" loading="lazy">
+                    </div>
+                    <h3 class="course-name">Forklift</h3>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- ===== WHY BELHASA SECTION ===== -->
+    <section class="why-us-section" aria-label="Why Choose Belhasa">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="courses-header" style="margin-bottom: 40px;">
+                <div class="header-separator">
+                    <span class="sep-line"></span>
+                    <span class="sep-text">WHY CHOOSE BELHASA DRIVING SCHOOL</span>
+                    <span class="sep-line"></span>
+                </div>
+                <h2 class="courses-title">
+                    <span class="title-dark">Everything Included,</span>
+                    <span class="title-gold">Nothing Extra</span>
+                </h2>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <!-- Card 2: 0% via Tabby -->
+                <div class="feature-card">
+                    <div class="feat-icon-box">
+                        <i class="fa-solid fa-credit-card feat-svg"
+                            style="font-size: 32px; width: unset; height: unset;"></i>
+                    </div>
+                    <h3 class="feat-title">Easy Payment Plan</h3>
+                    <p class="feat-desc">Take advantage of our easy payment plan options.
+                    </p>
+                </div>
+
+
+                <!-- Card 1: Unlimited Tests -->
+                <div class="feature-card">
+                    <div class="feat-icon-box">
+                        <img src="assets/images/icon_theory.svg" alt="Theory Practice" class="feat-svg"
+                            style="height: 48px; width: auto;" />
+                    </div>
+                    <h3 class="feat-title">Free Theory Practice</h3>
+                    <p class="feat-desc">Don't Stress about retakes. Enjoy Zero Re-test fees with unlimited attempts
+                        until you succeed</p>
+                </div>
+
+
+
+                <!-- Card 3: Free Transport -->
+                <div class="feature-card">
+                    <div class="feat-icon-box">
+                        <i class="fa-solid fa-bus feat-svg" style="font-size: 32px; width: unset; height: unset;"></i>
+                    </div>
+                    <h3 class="feat-title">Free Transport</h3>
+                    <p class="feat-desc">We pick you up and drop you off. Hassle-free every time.</p>
+                </div>
+
+                <!-- Card 4: RTA Approved -->
+                <div class="feature-card">
+                    <div class="feat-icon-box">
+                        <img src="assets/images/Rta logo.png" alt="RTA Logo" class="feat-svg"
+                            style="width: auto; height: 48px;" />
+                    </div>
+                    <h3 class="feat-title">RTA Approved</h3>
+                    <p class="feat-desc">Fully certified by Dubai's Roads & Transport Authority.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BANKS SECTION ===== -->
+    <section class="banks-section" id="applicable-banks" aria-label="Applicable Banks">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="courses-header" style="margin-bottom: 40px;">
+                <div class="header-separator">
+                    <span class="sep-line"></span>
+                    <span class="sep-text">ELIGIBLE BANKS</span>
+                    <span class="sep-line"></span>
+                </div>
+                <h2 class="courses-title">
+                    <span class="title-dark">0% Interest </span>
+                    <span class="title-gold">Easy Installment Plan</span>
+                </h2>
+                <p class="courses-subtitle">Get your UAE driving license without financial stress. With our 0% interest
+                    easy
+                    installment plan, you
+                    can split your course fees into manageable monthly payments through eligible banks.</p>
+            </div>
+
+            <!-- Banks Grid -->
+            <div class="banks-grid">
+                <div class="bank-card">
+                    <img src="assets/images/1.png" alt="Bank 1" class="bank-img">
+                </div>
+                <div class="bank-card">
+                    <img src="assets/images/2.png" alt="Bank 2" class="bank-img">
+                </div>
+                <div class="bank-card">
+                    <img src="assets/images/3.png" alt="Bank 3" class="bank-img">
+                </div>
+                <div class="bank-card">
+                    <img src="assets/images/4.png" alt="Bank 4" class="bank-img">
+                </div>
+                <div class="bank-card">
+                    <img src="assets/images/5.png" alt="Bank 5" class="bank-img">
+                </div>
+                <div class="bank-card">
+                    <img src="assets/images/6.png" alt="Bank 6" class="bank-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VIDEO CTA SECTION ===== -->
+    <section class="video-cta-section" aria-label="Unlimited Tests Offer">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="https://bdc.ae/wp-content/uploads/2023/01/bdc_bg_video-1-2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Dark Overlay -->
+        <div class="video-overlay"></div>
+
+        <div class="container video-content">
+
+            <!-- Separator -->
+            <div class="header-separator header-separator-light">
+                <span class="sep-line sep-line-light"></span>
+                <span class="sep-text sep-text-light">LIMITED TIME ONLY</span>
+                <span class="sep-line sep-line-light"></span>
+            </div>
+
+            <!-- Headlines -->
+            <h2 class="video-heading">
+                <span class="d-block text-white">Start Your Journey And Avail </span>
+                <span class="d-block text-gold">Our Exclusive Offer!</span>
+            </h2>
+
+            <p class="video-subtext">Free transport. 0% payment plan. No excuses to wait.</p>
+
+            <div class="video-cta-group">
+                <a href="#booking-form" class="btn-cta-large btn-video-cta">
+                    Register Now<span class="arrow">→</span>
+                </a>
+                <a href="https://wa.me/971500000000" class="btn-cta-large btn-video-cta btn-whatsapp-cta"
+                    target="_blank">
+                    Chat on WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <p class="terms-text">Terms & conditions apply. Offer valid during Ramadan period.</p>
+
+        </div>
+    </section>
+
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="faq-section" id="faq" aria-label="Frequently Asked Questions">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked <span>Questions</span></h2>
+
+            <div class="faq-grid">
+                <!-- Column 1 -->
+                <div class="faq-col">
+                    <details class="faq-item">
+                        <summary class="faq-question">Why Choose Belhasa Driving Center (BDC)?</summary>
+                        <div class="faq-answer">
+                            <p>Established in 2001, Belhasa Driving Center (BDC) has grown into one of Dubai’s leading
+                                driving institutes, operating 5 branches and 28 outlets with a fleet of over 800 modern
+                                vehicles.</p>
+                            <p>With over 20 years of expertise, our certified instructors and assessors are recognized
+                                among the best in Dubai, consistently achieving outstanding RTA awards. <strong>In 2025,
+                                    Belhasa Driving Center (BDC) secured 1st Place in the Theory Test and RTA Yard
+                                    Test</strong>, further reinforcing our
+                                commitment to excellence.</p>
+                            <p>The Licensing Agency of the Roads and Transport Authority (RTA) has officially recognized
+                                BDC for achieving exceptional Knowledge Test results (June 2023 – May 2024) and
+                                contributing to the lowest traffic accident rate among new drivers in 2023. Your journey
+                                to a safe and successful driving future starts with BDC.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">What does the 40% Ramadan discount include?</summary>
+                        <div class="faq-answer">
+                            <p>The Ramadan offer provides up to 40% off practical driving training packages. The package
+                                includes unlimited driving tests until you pass, free transportation, and RTA-approved
+                                training.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Which driving courses are available?</summary>
+                        <div class="faq-answer">
+                            <p>You can enroll in: Light Motor Vehicle (LMV), Motorcycle, Heavy Truck & Bus, and
+                                Forklift. All courses follow official RTA requirements and include structured practical
+                                training.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="faq-col">
+                    <details class="faq-item">
+                        <summary class="faq-question">What does "Unlimited Tests Until You Pass" mean?</summary>
+                        <div class="faq-answer">
+                            <p>You can retake your RTA driving test as many times as needed without paying additional
+                                retest fees, according to the promotional package terms. There are no capped attempts
+                                within the offer period.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Is the driving center RTA approved?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. The training programs are fully approved by Dubai’s Roads and Transport Authority
+                                (RTA), ensuring compliance with all licensing regulations.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Where are your branches located and how do I register?</summary>
+                        <div class="faq-answer">
+                            <p>Our branches are conveniently located across Dubai, including Al Wasl, Al Quoz, Nad Al
+                                Hamar, Al Qusais, and Jebel Ali, along with 28 outlets and kiosks across the
+                                emirate—making your registration easy and accessible.</p>
+                            <p>Getting started is simple. Just complete the online registration form with your details
+                                and preferred course.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Centered Last FAQ -->
+            <div class="faq-footer">
+                <details class="faq-item">
+                    <summary class="faq-question">Do you offer Installment payment options?</summary>
+                    <div class="faq-answer">
+                        <p>Yes! You can split your course fee into 4 interest-free payments through Tabby (0%
+                            installment plan) — with no additional finance charges.</p>
+                        <p>You may also choose to pay using your credit card and benefit from installment plans
+                            available with our listed partner banks.</p>
+                        <p>Please note that all installment payment options are subject to the respective bank’s terms
+                            and conditions and approval.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== LOCATIONS SECTION ===== -->
+    <section class="locations-section" aria-label="Our Branches">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="courses-header" style="margin-bottom: 50px;">
+                <div class="header-separator">
+                    <span class="sep-line"></span>
+                    <span class="sep-text">OUR DRIVING CENTER BRANCHES</span>
+                    <span class="sep-line"></span>
+                </div>
+                <h2 class="courses-title">
+                    <span class="title-dark">Find Us</span>
+                    <span class="title-gold"> Across Dubai</span>
+                </h2>
+                <p class="courses-subtitle">Four convenient RTA-certified driving school branches. <br>Free transport
+                    from your door to any
+                    location.</p>
+            </div>
+
+            <!-- Location Selector -->
+            <div class="locations-nav">
+                <!-- Location 1: Al Wasl -->
+                <div class="loc-btn">
+                    <div class="loc-img-wrap">
+                        <img src="assets/images/alwasel branch.jpeg" alt="Al Wasl Branch" class="loc-thumb">
+                    </div>
+                    <span class="loc-name">Al Wasl</span>
+                </div>
+
+                <!-- Location 2: Al Quoz -->
+                <div class="loc-btn">
+                    <div class="loc-img-wrap">
+                        <img src="assets/images/Al Quoz branch.png" alt="Al Quoz Branch" class="loc-thumb">
+                    </div>
+                    <span class="loc-name">Al Quoz</span>
+                </div>
+
+                <!-- Location 3: Nad Al Hamar -->
+                <div class="loc-btn">
+                    <div class="loc-img-wrap">
+                        <img src="assets/images/Nad Al Ammar.png" alt="Nad Al Hamar Branch" class="loc-thumb">
+                    </div>
+                    <span class="loc-name">Nad Al Hamar</span>
+                </div>
+
+                <!-- Location 4: Jebel Ali -->
+                <div class="loc-btn">
+                    <div class="loc-img-wrap">
+                        <img src="assets/images/Jebal Ali.png" alt="Jebel Ali Branch" class="loc-thumb">
+                    </div>
+                    <span class="loc-name">Jebel Ali</span>
+                </div>
+
+                <!-- Location 5: Al Qusais -->
+                <div class="loc-btn">
+                    <div class="loc-img-wrap">
+                        <img src="assets/images/Al Qusais.webp" alt="Al Qusais Branch" class="loc-thumb">
+                    </div>
+                    <span class="loc-name">Al Qusais</span>
+                </div>
+
+            </div>
+
+            <p class="locations-outro">We operate 28 outlets and kiosks across Dubai, ensuring convenient access to our
+                services.</p>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <!-- Logo (White Filter applied in CSS) -->
+                <img src="assets/images/logo_bdc.png" alt="Belhasa Driving Center" class="footer-logo">
+                <p class="copyright">© 2026 Belhasa Driving Center. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="tel:8002354272" class="footer-contact-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Now: 800 BELHASA (2354272)</span>
+                </a>
+                <a href="https://wa.me/+971551030103" class="footer-contact-link footer-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp: +971 55 103 0103</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup Form Container -->
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Close Popup">&times;</button>
+            <div class="popup-header">
+                <h2 class="form-title text-center" style="margin-bottom: 8px; color: #1e2d3d;">Claim Your Ramadan Offer
+                </h2>
+                <p class="form-subtitle text-center" style="margin-bottom: 24px; color: #4a5568;">
+                    Book now — <span style="color: #E39E3D; font-weight: 700;">Unlimited driving tests until you
+                        pass!</span>
+                </p>
+            </div>
+            <form class="booking-form-horizontal" id="popup-booking-form" action="send_email.php" method="POST"
+                novalidate>
+                <div class="form-success-message" id="popup-form-success-message"
+                    style="display:none;color:green;margin-bottom:10px;font-weight:500;text-align:center;">Thank you!
+                    Your details have been submitted successfully. Our team will contact you shortly.</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" name="full_name" class="form-input" placeholder="Full Name"
+                            autocomplete="name" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-input" placeholder="Email" autocomplete="email"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="popup-field-phone" name="phone" class="form-input"
+                            placeholder="+971 50 000 0000" autocomplete="tel" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <div class="form-select-wrap">
+                            <select name="language" class="form-select" required>
+                                <option value="">Select Language</option>
+                                <option value="arabic" selected>Arabic</option>
+                                <option value="english">English</option>
+                                <option value="hindi_urdu">Hindi/Urdu</option>
+                                <option value="tagalog">Tagalog</option>
+                            </select>
+                            <span class="select-arrow" aria-hidden="true">▼</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-select-wrap">
+                            <select name="interest" class="form-select" required>
+                                <option value="">Select Course</option>
+                                <option value="lmv" selected>Light Motor Vehicle (LMV)</option>
+                                <option value="mc">Motorcycle</option>
+                                <option value="hlb">Heavy & Light Bus</option>
+                                <option value="ht">Heavy Truck</option>
+                                <option value="hf">Heavy Forklift</option>
+                                <option value="lf">Light Forklift</option>
+                            </select>
+                            <span class="select-arrow" aria-hidden="true">▼</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-book-form" style="width: auto; padding: 0 32px;">
+                        <span>Register Now</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/971500000000" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <!-- Intl Tel Input Script -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Main Form Init
+            const input = document.querySelector("#field-phone");
+            const itiConfig = {
+                initialCountry: "auto",
+                geoIpLookup: function (callback) {
+                    fetch("https://ipapi.co/json")
+                        .then(function (res) { return res.json(); })
+                        .then(function (data) { callback(data.country_code); })
+                        .catch(function () { callback("ae"); });
+                },
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"
+            };
+            window.intlTelInput(input, itiConfig);
+
+            // Popup Form Init
+            const popupInput = document.querySelector("#popup-field-phone");
+            window.intlTelInput(popupInput, itiConfig);
+
+            // Popup Logic
+            const popupOverlay = document.getElementById('popup-overlay');
+            const closeBtn = document.querySelector('.popup-close');
+            const ctaButtons = document.querySelectorAll('a[href="#booking-form"], button[onclick*="booking-form"], a[href="#ramadan-offer"], .course-card');
+
+            ctaButtons.forEach(btn => {
+                btn.removeAttribute('onclick'); // Remove existing inline handlers
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    popupOverlay.classList.add('active');
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                popupOverlay.classList.remove('active');
+            });
+
+            popupOverlay.addEventListener('click', (e) => {
+                if (e.target === popupOverlay) {
+                    popupOverlay.classList.remove('active');
+                }
+            });
+
+
+            // --- AJAX Form Submission ---
+            const forms = [document.getElementById('booking-form'), document.getElementById('popup-booking-form')];
+            forms.forEach(form => {
+                if (!form) return;
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalBtnContent = submitBtn.innerHTML;
+
+                    // Show Loading State
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span><i class="fa-solid fa-spinner fa-spin"></i> Sending...</span>';
+
+                    const formData = new FormData(form);
+
+                    fetch('send_email.php', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                form.reset();
+                                // Show success message
+                                const successMsg = form.id === 'booking-form' ? document.getElementById('form-success-message') : document.getElementById('popup-form-success-message');
+                                if (successMsg) {
+                                    successMsg.style.display = 'block';
+                                    setTimeout(() => { successMsg.style.display = 'none'; }, 4000);
+                                }
+                                // If it's a popup, close it
+                                const popupOverlay = document.getElementById('popup-overlay');
+                                if (popupOverlay.classList.contains('active')) {
+                                    setTimeout(() => popupOverlay.classList.remove('active'), 2000);
+                                }
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Submission error:', error);
+                        })
+                        .finally(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnContent;
+                        });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

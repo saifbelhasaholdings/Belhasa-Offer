@@ -1,0 +1,170 @@
+/* =====================================================
+   12. HORIZONTAL POPUP FORM
+   ===================================================== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 45, 61, 0.85);
+    /* Dark blue overlay */
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 48px;
+    border-radius: 24px;
+    /* More rounded */
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    transform: translateY(30px) scale(0.98);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.popup-overlay.active .popup-content {
+    transform: translateY(0) scale(1);
+}
+
+.popup-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: #f8fafc;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.popup-close:hover {
+    background: #e2e8f0;
+    color: #1e2d3d;
+    transform: rotate(90deg);
+}
+
+.popup-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.booking-form-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.booking-form-horizontal .form-group {
+    flex: 1;
+}
+
+.booking-form-horizontal .form-input,
+.booking-form-horizontal .form-select {
+    height: 56px;
+    /* Taller inputs */
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding-inline: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.booking-form-horizontal .form-input:focus,
+.booking-form-horizontal .form-select:focus {
+    border-color: #E39E3D;
+    /* Gold border on focus */
+    box-shadow: 0 0 0 4px rgba(227, 158, 61, 0.1);
+    outline: none;
+}
+
+/* Adjust button inside popup */
+.popup-content .btn-book-form {
+    white-space: nowrap;
+    height: 56px;
+    padding: 0 40px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    background: #1e2d3d;
+    /* Dark Navy for button */
+    border-radius: 12px;
+}
+
+.popup-content .btn-book-form:hover {
+    background: #E39E3D;
+    /* Gold on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(227, 158, 61, 0.3);
+}
+
+/* Fix Intl Input in Popup */
+.popup-content .iti {
+    width: 100%;
+}
+
+.popup-content .iti__flag-container {
+    border-radius: 12px 0 0 12px;
+}
+
+/* Responsive Popup */
+@media (max-width: 1024px) {
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .popup-content {
+        padding: 56px 20px 32px;
+        /* Increased top padding to accommodate close button */
+        max-width: 500px;
+        /* Stacked layout max width */
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .popup-close {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        background: #000;
+        /* Matching the black style in user screenshot */
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .popup-header {
+        padding-inline: 10px;
+        margin-bottom: 24px;
+    }
+
+    .btn-book-form {
+        width: 100% !important;
+    }
+}
